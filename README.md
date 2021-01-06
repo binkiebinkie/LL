@@ -1,16 +1,25 @@
 # Local Line Test
 
+### Application State
+
+I used React's create context API to manage the apps state. It is a bit overkill, but it's easier to scale for a bigger application. It's initiated in the /state folder, and updated from the App.js file. In the future, the helper functions to manage state could be moved out to different files and functions. 
+
 ### Styled Components
 
-I chose to use styled components so I could keep the components styling and logic in the same place, so it's easier to read and follow for this test. In each folder, there is the index.js file for cleaner import/exporting, component and logic, and componentStyled for styling.
+I chose to use styled components so I could keep the components styling and logic in the same place, so it's easier to read and follow for this test. In each folder, there is the index.js file for cleaner import/exporting, component and logic, and componentStyled for styling. Global themes, colors and fonts are managed from the globalStyles file.
+
+### Components
+
+Smart, more complicated components are generally in the Containers folder, whilst simple, reusable components are in the presentational folder. If I had more time, I would make more of the presentational components, to increase efficiency for editing code in the future.
 
 ### Issues I am aware of
 
 - Chevrons (carets? >) and X button should be SVG's not characters
 - Colors and Fonts are a bit off; difficult to create without a style guide
 - colors/hover states for close buttons should change color or have some sort of interaction, but I used img tag instead of svg due to time constraint
+- close button doesn't close in customer list
 
-# Create React App default documentation
+## Create React App default documentation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
