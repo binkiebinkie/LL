@@ -7,6 +7,7 @@ const CustomersTitleStyled = styled.div`
   display: flex;
   padding: 16px;
   background-color: ${props => props.theme.G3};
+  border-radius: 8px 8px 0 0;
 
   h1 {
     color: ${props => props.theme.primary};

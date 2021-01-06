@@ -8,6 +8,7 @@ const CustomersFooterStyled = styled.div`
   justify-content: flex-end;
   padding: 16px;
   background-color: ${props => props.theme.pureWhite};
+  border-radius: 0 0 8px 8px;
 
   .customers--footer__pagination--container {
     display: flex;
@@ -26,6 +27,7 @@ const CustomersFooterStyled = styled.div`
     button {
       background-color: ${props => props.theme.pureWhite};
       border: 1px solid ${props => props.theme.G3};
+      cursor: pointer;
     }
 
     span {
@@ -36,6 +38,7 @@ const CustomersFooterStyled = styled.div`
 `;
 
 // TODO: make into functional button
+// TODO: Replace chevron with SVG
 const CustomersFooter = ({ theme }) => (
   <CustomersFooterStyled theme={theme}>
     <div className="customers--footer__pagination--container">

@@ -7,6 +7,17 @@ const HomeScreenStyled = styled.div`
   padding: 16px;
   background-color: ${props => props.theme.G1};
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+  button.default__button {
+    background-color: ${props => props.theme.primary};
+    padding: 8px 12px;
+    color: ${props => props.theme.pureWhite};
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid ${props => props.theme.G5};
+    font-weight: bold;
+    cursor: pointer;
+  }
 `;
 
 export default HomeScreenStyled;

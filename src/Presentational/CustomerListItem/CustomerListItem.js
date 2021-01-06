@@ -24,19 +24,6 @@ const CustomerListItemStyled = styled.div`
         font-size: 14px;
       }
     }
-
-    &view {
-      button {
-        background-color: ${props => props.theme.primary};
-        padding: 8px 12px;
-        color: ${props => props.theme.pureWhite};
-        text-transform: uppercase;
-        border-radius: 4px;
-        border: 1px solid ${props => props.theme.G5};
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
   }
 `;
 
@@ -54,7 +41,10 @@ const CustomerListItem = ({
       </span>
     </div>
     <div className="customers--customer__listItem--view">
-      <button onClick={() => updateApp("selectedCustomer", customer)}>
+      <button
+        className="default__button"
+        onClick={() => updateApp("selectedCustomer", customer)}
+      >
         View
       </button>
       {/* <image /> */}

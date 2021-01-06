@@ -4,15 +4,19 @@ import HomeScreenStyled from "./HomeScreenStyled";
 import AppContext from "../../state/AppContext";
 
 import Customers from "../Customers";
+import SelectedCustomerModal from "../SelectedCustomerModal";
 
 const HomeScreen = ({ theme }) => {
   const { app } = useContext(AppContext);
-  //   const { selectedCustomer } = app;
 
   return (
     <HomeScreenStyled theme={theme}>
       <Customers />
-      {/* {Object.keys(selectedCustomer).length && <SelectedCustomerModal selectedCustomer={selectedCustomer} />} */}
+      {app &&
+        Object.keys(app).length &&
+        Object.keys(app.selectedCustomer).length && (
+          <SelectedCustomerModal selectedCustomer={app.selectedCustomer} />
+        )}
     </HomeScreenStyled>
   );
 };
