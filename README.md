@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Local Line Test
+
+### Styled Components
+
+I chose to use styled components so I could keep the components styling and logic in the same place, so it's easier to read and follow for this test. In each folder, there is the index.js file for cleaner import/exporting, component and logic, and componentStyled for styling.
+
+# Create React App default documentation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
