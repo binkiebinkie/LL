@@ -2,6 +2,8 @@ import React from "react";
 import { withTheme } from "styled-components";
 import styled from "styled-components";
 
+import ic_cancel_black_24px from "../../assets/ic_cancel_black_24px.svg";
+
 const CustomerListItemStyled = styled.div`
   width: 100%;
   display: flex;
@@ -24,6 +26,21 @@ const CustomerListItemStyled = styled.div`
         font-size: 14px;
       }
     }
+    &close {
+      width: 24px;
+      height: 24px;
+      margin-left: 4px;
+      cursor: pointer;
+    }
+
+    &view {
+      display: flex;
+      align-items: center;
+
+      &.loading {
+        opacity: 0.4;
+      }
+    }
   }
 `;
 
@@ -31,6 +48,7 @@ const CustomerListItem = ({
   theme,
   customer,
   updateApp,
+  loading,
   customer: { business_name, city, province }
 }) => (
   <CustomerListItemStyled theme={theme}>
@@ -40,14 +58,20 @@ const CustomerListItem = ({
         {city}, {province}
       </span>
     </div>
-    <div className="customers--customer__listItem--view">
+    <div
+      className={`customers--customer__listItem--view ${
+        loading ? "loading" : ""
+      }`}
+    >
       <button
         className="default__button"
         onClick={() => updateApp("selectedCustomer", customer)}
       >
         View
       </button>
-      {/* <image /> */}
+      <div className="customers--customer__listItem--close">
+        <img alt="remove customer icon" src={ic_cancel_black_24px} />
+      </div>
     </div>
   </CustomerListItemStyled>
 );

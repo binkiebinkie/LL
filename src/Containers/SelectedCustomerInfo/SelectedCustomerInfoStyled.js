@@ -17,6 +17,7 @@ const SelectedCustomerInfoStyled = styled.div`
       position: absolute;
       top: 16px;
       right: 16px;
+      cursor: pointer;
     }
 
     &__info {
@@ -29,10 +30,24 @@ const SelectedCustomerInfoStyled = styled.div`
         border-top: 1px solid ${props => props.theme.G2};
         border-bottom: 1px solid ${props => props.theme.G2};
       }
+
+      button {
+        width: 100%;
+        margin: 4px 0;
+        font-family: "RobotoMedium", helvetica, sans-serif;
+        font-weight: 500;
+
+        &.secondary {
+          background-color: ${props => props.theme.secondary};
+        }
+      }
     }
 
     &__business-name {
       margin-bottom: 12px;
+      font-size: 20px;
+      font-family: "RobotoMedium", helvetica, sans-serif;
+      font-weight: 500;
     }
   }
 `;

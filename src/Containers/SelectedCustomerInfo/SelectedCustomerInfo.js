@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { withTheme } from "styled-components";
 import AppContext from "../../state/AppContext";
+import moment from "moment";
 
 import SelectedCustomerInfoStyled from "./SelectedCustomerInfoStyled";
 import CustomerInfo from "../../Presentational/CustomerInfo";
+import ic_clear_black_24px from "../../assets/ic_clear_black_24px.svg";
 
 const SelectedCustomerInfo = ({
   theme,
@@ -15,6 +17,8 @@ const SelectedCustomerInfo = ({
     buyer_average_order,
     orders_this_month
   } = customer_info;
+
+  // TODO: change close button to SVG
   return (
     <SelectedCustomerInfoStyled
       theme={theme}
@@ -24,7 +28,7 @@ const SelectedCustomerInfo = ({
         className="customer--modal__close"
         onClick={() => updateApp("selectedCustomer", {})}
       >
-        x
+        <img src={ic_clear_black_24px} alt="close modal" />
       </span>
       <h2 className="customer--modal__business-name">{business_name}</h2>
       <div className="customer--modal__info--container">
@@ -37,8 +41,11 @@ const SelectedCustomerInfo = ({
         </div>
         <div className="customer--modal__info">
           <CustomerInfo label="phone" value={"(123) 456-7890"} />
-          <CustomerInfo label="last delivery" value={last_delivery_date} />
-          <button className="default__button">add note</button>
+          <CustomerInfo
+            label="last delivery"
+            value={moment(last_delivery_date).format("MMMM Do YYYY")}
+          />
+          <button className="default__button secondary">add note</button>
           <CustomerInfo label="may orders" value={orders_this_month} />
           <CustomerInfo label="total sales" value="$0.01" />
         </div>

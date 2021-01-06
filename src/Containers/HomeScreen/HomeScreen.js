@@ -13,10 +13,10 @@ const HomeScreen = ({ theme }) => {
     <HomeScreenStyled theme={theme}>
       <Customers />
       {app &&
-        Object.keys(app).length &&
-        Object.keys(app.selectedCustomer).length && (
-          <SelectedCustomerModal selectedCustomer={app.selectedCustomer} />
-        )}
+      Object.keys(app).length &&
+      Object.keys(app.selectedCustomer).length ? (
+        <SelectedCustomerModal selectedCustomer={app.selectedCustomer} />
+      ) : null}
     </HomeScreenStyled>
   );
 };

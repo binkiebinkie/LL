@@ -4,6 +4,12 @@
 
 I chose to use styled components so I could keep the components styling and logic in the same place, so it's easier to read and follow for this test. In each folder, there is the index.js file for cleaner import/exporting, component and logic, and componentStyled for styling.
 
+### Issues I am aware of
+
+- Chevrons (carets? >) and X button should be SVG's not characters
+- Colors and Fonts are a bit off; difficult to create without a style guide
+- colors/hover states for close buttons should change color or have some sort of interaction, but I used img tag instead of svg due to time constraint
+
 # Create React App default documentation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

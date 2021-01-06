@@ -42,9 +42,9 @@ const CustomersFooterStyled = styled.div`
 const CustomersFooter = ({ theme }) => (
   <CustomersFooterStyled theme={theme}>
     <div className="customers--footer__pagination--container">
-      <button>{"<"}</button>
+      <button>&lt;</button>
       <span>1</span>
-      <button>></button>
+      <button>&gt;</button>
     </div>
   </CustomersFooterStyled>
 );

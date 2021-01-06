@@ -1,9 +1,10 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
 import AppContext from "./state/AppContext";
 import CustomersContext from "./state/CustomersContext";
 import { APICall } from "./util";
 import theme from "./theme";
+import GlobalStyle from "./globalStyles";
+// import GlobalFonts from "./assets/fonts/fonts";
 import { ThemeProvider } from "styled-components";
 
 import HomeScreen from "./Containers/HomeScreen";
@@ -46,6 +47,7 @@ const App = props => {
     <ThemeProvider theme={theme}>
       <AppContext.Provider value={{ app, updateApp }}>
         <CustomersContext.Provider value={{ customers }}>
+          <GlobalStyle />
           <HomeScreen />
         </CustomersContext.Provider>
       </AppContext.Provider>

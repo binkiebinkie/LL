@@ -8,6 +8,12 @@ import CustomersTitle from "../../Presentational/CustomersTitle";
 import CustomersFooter from "../../Presentational/CustomersFooter";
 import CustomerListItem from "../../Presentational/CustomerListItem";
 
+const loadingCustomer = {
+  province: "ON",
+  city: "Toronto",
+  business_name: "Example Express"
+};
+
 const Customers = ({ theme }) => {
   const { customers } = useContext(CustomersContext);
   const { updateApp } = useContext(AppContext);
@@ -15,9 +21,21 @@ const Customers = ({ theme }) => {
   return (
     <CustomersStyled theme={theme}>
       <CustomersTitle />
-      {customers.map(customer => (
-        <CustomerListItem customer={customer} updateApp={updateApp} />
-      ))}
+      {customers.length ? (
+        customers.map(customer => (
+          <CustomerListItem
+            key={customer.business_name}
+            customer={customer}
+            updateApp={updateApp}
+          />
+        ))
+      ) : (
+        <CustomerListItem
+          customer={loadingCustomer}
+          updateApp={() => {}}
+          loading
+        />
+      )}
       <CustomersFooter />
     </CustomersStyled>
   );

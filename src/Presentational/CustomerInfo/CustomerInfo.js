@@ -7,6 +7,7 @@ const CustomerInfoStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
+  min-height: 46px;
 
   div {
     border-bottom: 2px solid ${props => props.theme.G4};
@@ -20,6 +21,16 @@ const CustomerInfoStyled = styled.div`
   select {
     font-size: 16px;
     margin-top: 2px;
+    font-weight: 400;
+    font-family: "RobotoMedium", helvetica, sans-serif;
+  }
+
+  select {
+    font-size: 14px;
+    color: ${props => props.theme.G5};
+    padding: 2px;
+    border-radius: 2px;
+    border: 1px solid ${props => props.theme.G2};
   }
 `;
 
