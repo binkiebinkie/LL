@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const CustomersStyled = styled.div`
   width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   border-radius: 8px;

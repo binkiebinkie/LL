@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SelectedCustomerInfoStyled = styled.div`
   position: relative;
-  min-width: 700px;
+  width: 700px;
   max-width: 100%;
   height: auto;
   display: flex;
@@ -11,6 +11,11 @@ const SelectedCustomerInfoStyled = styled.div`
   padding: 16px;
   border-radius: 4px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 16px;
+
+  @media (max-width: 734px) {
+    width: 550px;
+  }
 
   .customer--modal {
     &__close {
@@ -29,6 +34,10 @@ const SelectedCustomerInfoStyled = styled.div`
         padding: 8px 0;
         border-top: 1px solid ${props => props.theme.G2};
         border-bottom: 1px solid ${props => props.theme.G2};
+
+        @media (max-width: 734px) {
+          flex-direction: column;
+        }
       }
 
       button {
@@ -40,6 +49,13 @@ const SelectedCustomerInfoStyled = styled.div`
         &.secondary {
           background-color: ${props => props.theme.secondary};
         }
+      }
+
+      @media (max-width: 734px) {
+        width: 100%;
+      }
+
+      &:last-of-type {
       }
     }
 

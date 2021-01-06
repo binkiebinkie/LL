@@ -7,6 +7,9 @@ const HomeScreenStyled = styled.div`
   padding: 16px;
   background-color: ${props => props.theme.G1};
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   button.default__button {
     background-color: ${props => props.theme.primary};

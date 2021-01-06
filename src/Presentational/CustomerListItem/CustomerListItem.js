@@ -5,9 +5,9 @@ import styled from "styled-components";
 import ic_cancel_black_24px from "../../assets/ic_cancel_black_24px.svg";
 
 const CustomerListItemStyled = styled.div`
-  width: 100%;
-  display: flex;
+  max-width: 100%;
   padding: 16px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.pureWhite};
@@ -37,10 +37,21 @@ const CustomerListItemStyled = styled.div`
       display: flex;
       align-items: center;
 
+      @media (max-width: 550px) {
+        margin-top: 8px;
+      }
+
       &.loading {
         opacity: 0.4;
       }
     }
+  }
+
+  @media (max-width: 550px) {
+    width: 550px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `;
 
