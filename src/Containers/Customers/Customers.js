@@ -1,9 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { withTheme } from "styled-components";
-import CustomersStyled from "./CustomersStyled";
+import CustomersContext from "../../state/CustomersContext";
+import AppContext from "../../state/AppContext";
 
-const Customers = ({ theme }) => (
-  <CustomersStyled theme={theme}>rendered</CustomersStyled>
-);
+import CustomersStyled from "./CustomersStyled";
+import CustomersTitle from "../../Presentational/CustomersTitle";
+import CustomersFooter from "../../Presentational/CustomersFooter";
+import CustomerListItem from "../../Presentational/CustomerListItem";
+
+const Customers = ({ theme }) => {
+  const { customers } = useContext(CustomersContext);
+  const { updateApp } = useContext(AppContext);
+
+  return (
+    <CustomersStyled theme={theme}>
+      <CustomersTitle />
+      {customers.map(customer => (
+        <CustomerListItem customer={customer} updateApp={updateApp} />
+      ))}
+      <CustomersFooter />
+    </CustomersStyled>
+  );
+};
 
 export default withTheme(Customers);

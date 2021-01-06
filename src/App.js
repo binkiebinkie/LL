@@ -34,7 +34,7 @@ const App = props => {
   // update app state to pass to app context
   // ambiguous value/key pair allows us to reuse same function
   // to update any key in app state, should there be more
-  const updateApp = (value, key) => {
+  const updateApp = (key, value) => {
     // JSON.stringify to get state from string
     // and not accidentally mutuate state somehow
     let newApp = JSON.parse(JSON.stringify(app));
